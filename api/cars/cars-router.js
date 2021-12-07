@@ -8,8 +8,8 @@ const {checkCarId, checkCarPayload, checkVinNumberUnique, checkVinNumberValid} =
 router.get('/', async (req, res, next) => {
     try {
         const cars = await Car.getAll()
-        res.json(cars)
-    } catch (error) {
+        res.status(200).json(cars)
+    } catch(error) {
         next(error)
     }
 })
