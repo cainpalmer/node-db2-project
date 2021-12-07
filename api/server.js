@@ -1,7 +1,15 @@
+
+// Server Variables
 const express = require("express")
+
+const carsRouter = require('./cars/cars-router')
 
 const server = express()
 
-// DO YOUR MAGIC
+// Use Server
+server.use(express.json())
 
+server.use('/', carsRouter)
+
+// Exports
 module.exports = server
